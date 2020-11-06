@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Bitacora20</string>
+
+
+    <!-- Layout Login -->
+    <string name="titulo_login">Iniciar Sesión en Networking</string>
+    <string name="texto_explicacion_login">Usa tu dirección de correo electrónico y la contraseña que indicaste al crear tu cuenta</string>
+    <string name="prompt_correo_electronico">Correo electrónico</string>
+    <string name="prompt_contrasenha">Contraseña</string>
+    <string name="action_boton_iniciar_sesion">INICIAR SESION</string>
+    <string name="link_contrasenha_olvidada">¿Ha olvidado su contraseña?</string>
 </resources>
