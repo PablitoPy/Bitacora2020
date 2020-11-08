@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.bitacora20.datos.Usuario;
 import com.example.bitacora20.R;
 
+
+
 public class LoginActivity extends Activity {
 
     private static final String TAG = "LoginActivity";
@@ -24,15 +26,15 @@ public class LoginActivity extends Activity {
         Log.d(TAG, "onCreate: Inicia la creacion de la ctividad");
         setContentView(R.layout.activity_login);
 
-        campoNombreUsuario = (EditText) findViewById( R.id.nombre_usuario );
-        campoPassword = (EditText) findViewById( R.id.contrasenha );
+        campoNombreUsuario = (EditText) findViewById(R.id.nombre_usuario);
+        campoPassword = (EditText) findViewById(R.id.contrasenha);
     }
 
     public void iniciarSesion(View view) {
         String email = campoNombreUsuario.getText().toString();
         String password = campoPassword.getText().toString();
 
-        if ( email.equals("") || password.equals("") ) {
+        if (email.equals("") || password.equals("")) {
             desplegarMensajeUsuarioPasswordNoIngresado();
 
         } else {
@@ -41,8 +43,8 @@ public class LoginActivity extends Activity {
             if (estaComprobado) {
                 Log.i(TAG, "Credenciales correctas");
                 setUsuarioLogueado();
-                Intent intentMenuPricipal = new Intent( this, MenuPrincipalActivity.class );
-                startActivity( intentMenuPricipal );
+                Intent intentMenuPricipal = new Intent(this, MenuPrincipalActivity.class);
+                startActivity(intentMenuPricipal);
             } else {
                 Log.i(TAG, "Las credenciales son incorrectas");
 
@@ -52,8 +54,9 @@ public class LoginActivity extends Activity {
 
     }
 
+
     public void desplegarMensajeCredencialesIncorrectas() {
-        Toast toast = Toast.makeText( this, "Credenciales incorrectas", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -64,9 +67,14 @@ public class LoginActivity extends Activity {
 
     private void setUsuarioLogueado() {
         String email = campoNombreUsuario.getText().toString();
-        Usuario.setUsuarioLogueado( Usuario.getUsuario( email ));
+        Usuario.setUsuarioLogueado(Usuario.getUsuario(email));
     }
 
+
+    public void lanzarLogin (View view ){
+        Intent i = new Intent(this,LoginActivity.class);
+        startActivity(i);
+    }
 
     public void showDialogo(){
         new AlertDialog.Builder(this)

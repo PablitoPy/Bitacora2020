@@ -9,4 +9,18 @@
     <string name="prompt_contrasenha">Contraseña</string>
     <string name="action_boton_iniciar_sesion">INICIAR SESION</string>
     <string name="link_contrasenha_olvidada">¿Ha olvidado su contraseña?</string>
+
+    <!-- Layout Crear Cuenta -->
+    <string name="crear_cuenta_titulo">Crear Cuenta</string>
+    <string name="crear_cuenta_descripcion">Al crear una cuenta, podrás crear grupos o acceder a grupos ya creados para conocer personas que están cerca de ti.</string>
+    <string name="crear_cuenta_hint_nombre">Nombre y Apellido</string>
+    <string name="crear_cuenta_hint_nickname">Nickname</string>
+    <string name="crear_cuenta_hint_telefono">Número de teléfono</string>
+    <string name="crear_cuenta_hint_email">Correo electrónico</string>
+    <string name="crear_cuenta_hint_password">Password</string>
+    <string name="crear_cuenta_boton_registrate">Registrate</string>
+
+    <!-- Layout Inicio -->
+    <string name="button2">Iniciar Sesión</string>
+    <string name="button">Registrarse</string>
 </resources>

@@ -2,13 +2,13 @@ package com.example.bitacora20.datos;
 
 import java.util.ArrayList;
 
+
 public class Usuario {
     private String nickname;
     private String nombreApellido;
     private String mail;
     private String password;
     private String telefono;
-
 
     private static Usuario usuarioLogueado;
     private static ArrayList<Usuario> usuarios;
@@ -25,9 +25,7 @@ public class Usuario {
         this.mail = mail;
         this.password = password;
         this.telefono = telefono;
-
     }
-
 
 
 
