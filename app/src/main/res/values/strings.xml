@@ -23,4 +23,20 @@
     <!-- Layout Inicio -->
     <string name="button2">Iniciar Sesión</string>
     <string name="button">Registrarse</string>
+
+    <!-- Layout Crear Grupo -->
+    <string name="crear_materia_titulo"> Creación de Materia </string>
+    <string name="crear_materia_descripcion"> Asigna un nombre a la Materia y su descripción y profesor </string>
+    <string name="crear_materia_hint_nombre"> Nombre </string>
+    <string name="crear_materia_hint_descripcion"> Descripción </string>
+    <string name="crear_materia_hint_profesor"> Profesor </string>
+    <string name="crear_materia_boton_crearmateria"> Crear Materia </string>
+
+    <!-- Menu -->
+    <string name="menu_editar"> Editar </string>
+    <string name="menu_eliminar"> Eliminar </string>
+    <string name="menu_compartir"> Compartir </string>
+    <string name="menu_guardar"> Guardar </string>
+    <string name="menu_limpiar"> Limpiar </string>
+    <string name="menu_siguiente"> Siguiente </string>
 </resources>
