@@ -3,7 +3,7 @@
 
 
     <!-- Layout Login -->
-    <string name="titulo_login">Iniciar Sesión en Networking</string>
+    <string name="titulo_login">Iniciar Sesión</string>
     <string name="texto_explicacion_login">Usa tu dirección de correo electrónico y la contraseña que indicaste al crear tu cuenta</string>
     <string name="prompt_correo_electronico">Correo electrónico</string>
     <string name="prompt_contrasenha">Contraseña</string>
@@ -12,7 +12,7 @@
 
     <!-- Layout Crear Cuenta -->
     <string name="crear_cuenta_titulo">Crear Cuenta</string>
-    <string name="crear_cuenta_descripcion">Al crear una cuenta, podrás crear grupos o acceder a grupos ya creados para conocer personas que están cerca de ti.</string>
+    <string name="crear_cuenta_descripcion">Al crear una cuenta, podrás llevar anotaciones de todas tus clases.</string>
     <string name="crear_cuenta_hint_nombre">Nombre y Apellido</string>
     <string name="crear_cuenta_hint_nickname">Nickname</string>
     <string name="crear_cuenta_hint_telefono">Número de teléfono</string>

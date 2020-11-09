@@ -53,8 +53,7 @@ public class LoginActivity extends Activity {
         }
 
     }
-
-
+    
     public void desplegarMensajeCredencialesIncorrectas() {
         Toast toast = Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT);
         toast.show();
@@ -71,11 +70,6 @@ public class LoginActivity extends Activity {
     }
 
 
-    public void lanzarLogin (View view ){
-        Intent i = new Intent(this,LoginActivity.class);
-        startActivity(i);
-    }
-
     public void showDialogo(){
         new AlertDialog.Builder(this)
                 .setTitle("Mensaje de Login")
@@ -83,6 +77,5 @@ public class LoginActivity extends Activity {
                 .setPositiveButton("Ok", null)
                 .show();
     }
-
 
 }

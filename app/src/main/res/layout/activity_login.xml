@@ -37,14 +37,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/login" />
+            android:src="@drawable/key" />
 
         <EditText
             android:id="@+id/nombre_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:hint="@string/prompt_correo_electronico"
             android:inputType="text"
             android:maxLines="1"
@@ -55,9 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:hint="@string/prompt_contrasenha"
-            android:imeActionId="@+id/login"
             android:imeActionLabel="@string/action_boton_iniciar_sesion"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
@@ -69,11 +68,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="5dp"
+            android:layout_margin="15dp"
+            android:onClick="iniciarSesion"
             android:paddingLeft="32dp"
             android:paddingRight="32dp"
-            android:text="@string/action_boton_iniciar_sesion"
-            android:onClick="iniciarSesion"/>
+            android:text="@string/action_boton_iniciar_sesion" />
 
         <TextView
             android:id="@+id/textView5"
@@ -81,11 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="40dp"
             android:text="@string/link_contrasenha_olvidada"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
 
     </LinearLayout>
 </ScrollView>
