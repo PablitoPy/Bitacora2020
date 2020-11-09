@@ -43,7 +43,7 @@ public class LoginActivity extends Activity {
             if (estaComprobado) {
                 Log.i(TAG, "Credenciales correctas");
                 setUsuarioLogueado();
-                Intent intentVerMateria = new Intent(this, VerMateriaActivity.class);
+                Intent intentVerMateria = new Intent(this, MateriasListView.class);
                 startActivity(intentVerMateria);
             } else {
                 Log.i(TAG, "Las credenciales son incorrectas");

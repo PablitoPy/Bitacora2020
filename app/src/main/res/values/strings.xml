@@ -39,4 +39,17 @@
     <string name="menu_guardar"> Guardar </string>
     <string name="menu_limpiar"> Limpiar </string>
     <string name="menu_siguiente"> Siguiente </string>
+
+    <!-- Layout Ver Materias-->
+    <string name="grupos_cercanos_titulo"> Materias </string>
+
+    <!-- Layout Ver Datos Materia -->
+    <string name="ver_datos_materia_titulo"> Datos de las Materias </string>
+    <string name="ver_datos_materia_descripcion"> Muestra los datos de las materias </string>
+    <string name="etiqueta_nombre_materia"> Nombre:  </string>
+    <string name="etiqueta_descripcion_materia"> Descripción:  </string>
+    <string name="etiqueta_profesor_materia"> Profesor:  </string>
+
+    <!-- Mensajes -->
+    <string name="lista_vacia">Lista vacía</string>
 </resources>
