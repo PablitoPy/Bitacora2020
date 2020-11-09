@@ -43,8 +43,8 @@ public class LoginActivity extends Activity {
             if (estaComprobado) {
                 Log.i(TAG, "Credenciales correctas");
                 setUsuarioLogueado();
-                Intent intentMenuPricipal = new Intent(this, MenuPrincipalActivity.class);
-                startActivity(intentMenuPricipal);
+                Intent intentVerMateria = new Intent(this, VerMateriaActivity.class);
+                startActivity(intentVerMateria);
             } else {
                 Log.i(TAG, "Las credenciales son incorrectas");
 
@@ -53,7 +53,7 @@ public class LoginActivity extends Activity {
         }
 
     }
-    
+
     public void desplegarMensajeCredencialesIncorrectas() {
         Toast toast = Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT);
         toast.show();
