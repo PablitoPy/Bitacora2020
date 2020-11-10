@@ -17,7 +17,8 @@
             android:layout_gravity="center"
             android:paddingTop="10dp"
             android:textSize="@dimen/tamanho_titulo"
-            android:textStyle="bold"
+            android:textColor="#3B75A3"
+            android:textStyle="italic"
             />
 
         <TextView
@@ -93,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:textSize="20sp"
-                android:text="@string/etiqueta_descripcion_materia" />
+                android:text="@string/etiqueta_profesor_materia" />
             <TextView
                 android:id="@+id/id_profesor_materia_valor"
                 android:layout_width="wrap_content"
@@ -103,7 +104,5 @@
                 android:textSize="20sp"
                 />
         </LinearLayout>
-
-
     </LinearLayout>
 </ScrollView>

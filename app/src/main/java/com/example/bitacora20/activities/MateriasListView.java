@@ -22,16 +22,16 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_materias);
-				
+
 		ArrayList<Materia> materias = Materia.materias;
-		Log.d(LogUtils.tag, "CantidadMaterias: "+materias.size());
-		
+		Log.d(LogUtils.tag, "CantidadMaterias: " + materias.size());
+
 		// Modo1
 		setListAdapter(new GrupoAdaptador(this, materias));
-		
+
 		// Modo 2
 		/*
 		ListView listTaxista = (ListView) findViewById(R.id.listTaxista);
@@ -46,19 +46,23 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
                 
             }
         });*/
-		
+
 	}
 
-	
+
 	//Modo 1
 	@Override
-	protected void onListItemClick (ListView l, View v, int position, long id) {
-	    Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();
 
-	    Intent i = new Intent(this, VerDatosMateriaActivity.class);
-        i.putExtra("idGrupo", Integer.parseInt(""+id));
-        startActivity(i);
+		Intent i = new Intent(this, VerDatosMateriaActivity.class);
+		i.putExtra("idGrupo", Integer.parseInt("" + id));
+		startActivity(i);
 	}
 
+	public void lanzarCrearMateria(View view) {
+		Intent i = new Intent(this, CrearMateriaActivity.class);
+		startActivity(i);
 
+	}
 }

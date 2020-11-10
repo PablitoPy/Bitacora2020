@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="match_parent"
-    	android:layout_height="wrap_content"	    
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+	android:id="@+id/listview"
 	    >
-	    
-	    <TextView 
-	      android:id="@+id/titulo_principal"
-	      android:layout_width="match_parent"
-	      android:layout_height="wrap_content"
-	      android:text="@string/grupos_cercanos_titulo"
-	      android:gravity="center"
-	      android:textSize="29sp"
-	      android:layout_marginBottom="20dp"/>
-	
-	    <!-- Modo 1 -->
-	    <ListView
+
+		<!-- Modo 1 -->
+		<TextView
+			android:id="@+id/titulo_principal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="20dp"
+			android:gravity="center"
+			android:text="@string/grupos_cercanos_titulo"
+			android:textColor="#3B75A3"
+			android:textStyle="italic"
+			android:textSize="29sp" />
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/floatingActionButton3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true"
+		android:layout_marginEnd="29dp"
+		android:layout_marginRight="29dp"
+		android:layout_marginBottom="16dp"
+		android:clickable="true"
+		android:onClick="lanzarCrearMateria"
+		app:srcCompat="@android:drawable/ic_input_add" />
+
+		<ListView
 	        android:id="@android:id/list"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@id/titulo_principal"/>
-	
-	    <!-- Modo 1 -->
+	        android:layout_below="@id/titulo_principal">
+		</ListView>
+
+	<!-- Modo 1 -->
 	    <TextView
 	        android:id="@android:id/empty"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/lista_vacia" />
-	    
+</RelativeLayout>
+
 	    <!-- Modo 2 -->
 	    <!--ListView
 	        android:id="@+id/listTaxista"
@@ -35,8 +55,5 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@id/titulo_principal"/-->
 	    
-	    
-		    	    
 
-	</RelativeLayout>
 
