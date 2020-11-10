@@ -1,10 +1,14 @@
 package com.example.bitacora20.activities;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -12,6 +16,7 @@ import com.example.bitacora20.R;
 import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.utils.LogUtils;
 import java.util.ArrayList;
+import com.example.bitacora20.utils.RequestCode;
 import com.example.bitacora20.adaptadores.GrupoAdaptador;
 
 
@@ -61,8 +66,35 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 	}
 
 	public void lanzarCrearMateria(View view) {
-		Intent i = new Intent(this, CrearMateriaActivity.class);
-		startActivity(i);
+		Intent intentCreacionMateria = new Intent(this, CrearMateriaActivity.class);
+		startActivityForResult(intentCreacionMateria, RequestCode.ACT_LANZADA_CREAR_GRUPO.getCodigo());
 
 	}
+
+	public void lanzarVerDatosGrupos(View view) {
+		final EditText entrada = new EditText(this);
+		entrada.setText("0");
+		new AlertDialog.Builder(this)
+				.setTitle("Selección de grupo")
+				.setMessage("Indica su id:")
+				.setView(entrada)
+				.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						int id = Integer.parseInt( entrada.getText().toString());
+						Intent i = new Intent( MateriasListView.this, VerDatosMateriaActivity.class);
+						i.putExtra("idGrupo", id);
+						startActivity( i );
+					}})
+				.setNegativeButton("Cancelar", null)
+				.show();
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode == RequestCode.ACT_LANZADA_CREAR_GRUPO.getCodigo() && resultCode == Activity.RESULT_OK){
+			int res = data.getExtras().getInt("resultado");
+			Log.i(LogUtils.tag, "Resultado:" + res);
+		}
+	}
 }
+
