@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/crear_materia_titulo"
-        android:id="@+id/tit_creacion_materia"
+        android:text="@string/crear_tema_titulo"
+        android:id="@+id/tit_creacion_tema"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:paddingTop="10dp"
@@ -23,8 +20,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/crear_materia_descripcion"
-        android:id="@+id/desc_actividad_creacion_materia"
+        android:text="@string/crear_tema_descripcion"
+        android:id="@+id/desc_actiividad_creacion_tema"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/tit_creacion_grupo"
         android:paddingLeft="20dp"
@@ -35,9 +32,9 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/crear_materia_hint_nombre"
+        android:hint="@string/crear_tema_hint_nombre"
         android:ems="15"
-        android:id="@+id/creacion_nombre_materia"
+        android:id="@+id/creacion_nombre_tema"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/desc_actiividad_creacion_grupo"
         android:layout_centerHorizontal="true"
@@ -48,31 +45,21 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="15"
-        android:hint="@string/crear_materia_hint_descripcion"
-        android:id="@+id/creacion_descripcion_materia"
-        android:layout_below="@id/creacion_nombre_materia"
+        android:hint="@string/crear_tema_hint_fecha"
+        android:id="@+id/creacion_fecha_tema"
+        android:layout_below="@id/creacion_nombre_tema"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:id="@+id/creacion_profesor_materia"
+<!--    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/creacion_descripcion_materia"
-        android:layout_marginTop="15dp"
-        android:ems="15"
-        android:hint="@string/crear_materia_hint_profesor"
-        android:inputType="textMultiLine"
-        android:layout_centerHorizontal="true" />
- <!--   <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/crear_materia_boton_crearmateria"
-        android:id="@+id/boton_crear_materia"
-        android:layout_below="@+id/creacion_profesor_materia"
+        android:text="@string/crear_tema_boton_creartema"
+        android:id="@+id/boton_crear_grupo"
+        android:layout_below="@+id/creacion_fecha_tema"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:onClick="crearMateria"/>-->
+        android:onClick="crearGrupo"/>-->
 
 
 </RelativeLayout>

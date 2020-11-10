@@ -13,66 +13,60 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
 import com.example.bitacora20.datos.Usuario;
-import com.example.bitacora20.datos.Materia;
+import com.example.bitacora20.datos.Tema;
 import com.example.bitacora20.utils.LogUtils;
 
-
-public class CrearMateriaActivity extends AppCompatActivity {
-    private static final String TAG = "CrearMateriaActivity";
+public class CrearTemaActivity extends AppCompatActivity {
+    private static final String TAG = "CrearGrupoActivity";
     private EditText campoNombre;
-    private EditText campoDescripcion;
-    private EditText campoProfesor;
+    private EditText campoFecha;
     private Button boton;
 
-    private int idMateria = -1;
+    private int idGrupo = -1;
     private boolean modoEdicion = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crear_materia);
+        setContentView(R.layout.activity_crear_tema);
 
-        campoNombre = (EditText) findViewById( R.id.creacion_nombre_materia );
-        campoDescripcion = (EditText) findViewById( R.id.creacion_descripcion_materia );
-        campoProfesor = (EditText) findViewById( R.id.creacion_profesor_materia );
+        campoNombre = (EditText) findViewById( R.id.creacion_nombre_tema );
+        campoFecha = (EditText) findViewById( R.id.creacion_fecha_tema );
         //boton = (Button) findViewById( R.id.boton_crear_grupo );
 
         // Verificamos si nos llamaron para editar algun grupo
         Bundle extras = getIntent().getExtras();
         if ( extras != null ) {
-            idMateria = extras.getInt( "idMateria", -1 );
-            if ( idMateria != -1 ) {
+            idGrupo = extras.getInt( "idGrupo", -1 );
+            if ( idGrupo != -1 ) {
                 modoEdicion = true;
-                campoNombre.setText( Materia.materias.get( idMateria ).getNombre() );
-                campoDescripcion.setText( Materia.materias.get( idMateria ).getDescripcion() );
-                campoProfesor.setText( Materia.materias.get( idMateria ).getProfesor() );
+                campoNombre.setText( Tema.temas.get( idGrupo ).getNombre() );
+                campoFecha.setText( Tema.temas.get( idGrupo ).getFecha() );
                 //boton.setText( "Editar Grupo" );
             }
         }
     }
 
-
-    public void crearMateria() { // para boton
+    ///public void crearGrupo(View view) { // para boton
+    public void crearGrupo() { // para boton
         String nombre = campoNombre.getText().toString();
-        String descripcion = campoDescripcion.getText().toString();
-        String profesor = campoProfesor.getText().toString();
+        String fecha = campoFecha.getText().toString();
 
-        if ( nombre.equals("") || descripcion.equals("") || profesor.equals("")) {
+        if ( nombre.equals("") || fecha.equals("") ) {
             desplegarMensajeCamposRequeridos();
         } else {
             if ( modoEdicion ) {
-                Materia materia = Materia.materias.get( idMateria );
-                materia.setNombre( nombre );
-                materia.setDescripcion( descripcion );
-                materia.setProfesor( profesor );
+                Tema tema = Tema.temas.get( idGrupo );
+                tema.setNombre( nombre );
+                tema.setFecha( fecha );
 
                 Intent intent = new Intent();
                 intent.putExtra("resultado", 1);
                 setResult(RESULT_OK, intent);
                 finish();
             } else {
-                Materia materia = new Materia( nombre, descripcion , profesor, Usuario.getUsuarioLogueado() );
-                Materia.agregarMateria( materia );
+                Tema tema = new Tema( nombre, fecha );
+                Tema.agregarTema( tema );
                 desplegarMensajeResgistroExitoso();
 
                 Intent intent = new Intent();
@@ -96,7 +90,7 @@ public class CrearMateriaActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.crear_materia_menu, menu);
+        getMenuInflater().inflate(R.menu.crear_tema_menu, menu);
         //return true;
         return super.onCreateOptionsMenu(menu);
     }
@@ -106,7 +100,7 @@ public class CrearMateriaActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.item_guardar: {
                 Log.d(LogUtils.tag, "Item seleccionado: Guardar");
-                crearMateria();
+                crearGrupo();
                 break;
             }case R.id.item_limpiar:{
                 Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
@@ -118,7 +112,6 @@ public class CrearMateriaActivity extends AppCompatActivity {
 
     public void limpiarCampos(){
         campoNombre.setText("");
-        campoDescripcion.setText("");
-        campoProfesor.setText("");
+        campoFecha.setText("");
     }
 }

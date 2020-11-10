@@ -24,13 +24,20 @@
     <string name="button2">Iniciar Sesión</string>
     <string name="button">Registrarse</string>
 
-    <!-- Layout Crear Grupo -->
+    <!-- Layout Crear Materia -->
     <string name="crear_materia_titulo"> Creación de Materia </string>
     <string name="crear_materia_descripcion"> Asigna un nombre a la Materia y su descripción y profesor </string>
     <string name="crear_materia_hint_nombre"> Nombre </string>
     <string name="crear_materia_hint_descripcion"> Descripción </string>
     <string name="crear_materia_hint_profesor"> Profesor </string>
     <string name="crear_materia_boton_crearmateria"> Crear Materia </string>
+
+    <!-- Layout Crear Tema -->
+    <string name="crear_tema_titulo"> Creación de Tema </string>
+    <string name="crear_tema_descripcion"> Asigna un nombre al Tema y su fecha. </string>
+    <string name="crear_tema_hint_nombre"> Nombre </string>
+    <string name="crear_tema_hint_fecha"> Fecha </string>
+    <string name="crear_tema_boton_creartema"> Crear Tema </string>
 
     <!-- Menu -->
     <string name="menu_editar"> Editar </string>
@@ -49,6 +56,12 @@
     <string name="etiqueta_nombre_materia"> Nombre:  </string>
     <string name="etiqueta_descripcion_materia"> Descripción:  </string>
     <string name="etiqueta_profesor_materia"> Profesor:  </string>
+
+    <!-- Layout Ver Datos Tema -->
+    <string name="ver_datos_tema_titulo"> Datos de las Temas </string>
+    <string name="ver_datos_tema_descripcion"> Muestra los datos de los temas </string>
+    <string name="etiqueta_nombre_tema"> Nombre:  </string>
+    <string name="etiqueta_fecha_tema"> Fecha:  </string>
 
     <!-- Mensajes -->
     <string name="lista_vacia">Lista vacía</string>

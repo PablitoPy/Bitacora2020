@@ -12,71 +12,66 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
-import com.example.bitacora20.datos.Materia;
+import com.example.bitacora20.datos.Tema;
 import com.example.bitacora20.utils.LogUtils;
 import com.example.bitacora20.utils.NotificationsUtils;
 import com.example.bitacora20.utils.RequestCode;
 
 
-public class VerDatosMateriaActivity extends AppCompatActivity {
-    private static final String TAG = "VerDatosMateriaActivity";
+public class VerDatosTemaActivity extends AppCompatActivity {
+    private static final String TAG = "VerDatosGrupoActivity";
     private static final int PETICION_EDITAR_GRUPO = 1;
-    private int idMateria = -1;
-    private Materia unaMateria;
+    private int idTema = -1;
+    private Tema unTema;
     private TextView nombre;
-    private TextView descripcion;
-    private TextView profesor;
-
+    private TextView objetivo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(LogUtils.tag, "Inicia metodo en VerDatosGrupoActivity.onCreate");
-        setContentView(R.layout.activity_ver_datos_materia);
+        setContentView(R.layout.activity_ver_datos_tema);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            idMateria = extras.getInt("idGrupo", -1);
-            Log.i(LogUtils.tag, "Id recibido del grupo: "+idMateria);
+            idTema = extras.getInt("idGrupo", -1);
+            Log.i(LogUtils.tag, "Id recibido del grupo: "+idTema);
         }
 
         actualizarVista();
     }
 
     public void actualizarVista(){
-        if ( idMateria < 0 || idMateria > (Materia.materias.size()-1) ) {
+        if ( idTema < 0 || idTema > (Tema.temas.size()-1) ) {
             desplegarMensajeNoExisteGrupo();
             finish();
             return;
         }
 
-        unaMateria = Materia.materias.get( idMateria );
+        unTema = Tema.temas.get( idTema );
 
-        nombre = (TextView) findViewById(R.id.id_nombre_materia_valor);
-        nombre.setText( unaMateria.getNombre() );
+        nombre = (TextView) findViewById(R.id.id_nombre_tema_valor);
+        nombre.setText( unTema.getNombre() );
 
-        descripcion = (TextView) findViewById(R.id.id_descripcion_materia_valor);
-        descripcion.setText(unaMateria.getDescripcion());
-
-        profesor = (TextView) findViewById(R.id.id_profesor_materia_valor);
-        descripcion.setText(unaMateria.getDescripcion());
+        objetivo = (TextView) findViewById(R.id.id_fecha_tema_valor);
+        objetivo.setText(unTema.getFecha());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate( R.menu.ver_materia_menu , menu );
+        getMenuInflater().inflate( R.menu.ver_tema_menu , menu );
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch( item.getItemId() ) {
-            case R.id.editar_materia:{
+            case R.id.editar_tema:{
                 lanzarActividadEdicionGrupo();
                 break;
             }
-            case R.id.eliminar_materia:{
-                Materia.materias.remove( idMateria );
+            case R.id.eliminar_tema:{
+                Tema.temas.remove( idTema );
                 desplegarMensajeEliminacionGrupo();
                 finish();
                 break;
@@ -90,9 +85,9 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
     }
 
     public void opcionSiguiente(){
-        idMateria++;
-        if(idMateria < Materia.materias.size()){
-            unaMateria = Materia.materias.get(idMateria);
+        idTema++;
+        if(idTema < Tema.temas.size()){
+            unTema = Tema.temas.get(idTema);
             actualizarVista();
         }else{
             Context contexto = getApplicationContext();
@@ -102,8 +97,8 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
     }
 
     private void lanzarActividadEdicionGrupo() {
-        Intent i = new Intent( this, CrearMateriaActivity.class );
-        i.putExtra("idMateria", idMateria );
+        Intent i = new Intent( this, CrearTemaActivity.class );
+        i.putExtra("idTema", idTema );
         startActivityForResult( i, RequestCode.PETICION_EDITAR_GRUPO.getCodigo());
     }
 

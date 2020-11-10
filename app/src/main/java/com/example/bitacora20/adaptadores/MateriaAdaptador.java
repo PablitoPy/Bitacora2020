@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import com.example.bitacora20.R;
 import com.example.bitacora20.datos.Materia;
 
-public class GrupoAdaptador extends BaseAdapter {
+public class MateriaAdaptador extends BaseAdapter {
 	
 	private final Activity actividad;
 	private final ArrayList<Materia> materias;
 	
-	public GrupoAdaptador(Activity actividad, ArrayList<Materia> materias){
+	public MateriaAdaptador(Activity actividad, ArrayList<Materia> materias){
 		super();
 		this.actividad = actividad;
 		this.materias = materias;

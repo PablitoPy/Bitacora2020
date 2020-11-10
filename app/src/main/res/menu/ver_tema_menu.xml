@@ -8,13 +8,13 @@
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/editar_materia"
+        android:id="@+id/editar_tema"
         android:title="@string/menu_editar"
         app:showAsAction="never"
     />
 
     <item
-        android:id="@+id/eliminar_materia"
+        android:id="@+id/eliminar_tema"
         android:title="@string/menu_eliminar"
         app:showAsAction="never"
     />

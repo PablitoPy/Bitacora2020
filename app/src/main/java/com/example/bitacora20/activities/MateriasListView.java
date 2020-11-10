@@ -13,13 +13,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.bitacora20.R;
+import com.example.bitacora20.adaptadores.MateriaAdaptador;
 import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.utils.LogUtils;
 import java.util.ArrayList;
 import com.example.bitacora20.utils.RequestCode;
-import com.example.bitacora20.adaptadores.GrupoAdaptador;
-
-
 
 
 public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/list
@@ -35,7 +33,7 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 		Log.d(LogUtils.tag, "CantidadMaterias: " + materias.size());
 
 		// Modo1
-		setListAdapter(new GrupoAdaptador(this, materias));
+		setListAdapter(new MateriaAdaptador(this, materias));
 
 		// Modo 2
 		/*
