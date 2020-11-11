@@ -46,6 +46,7 @@
     <string name="menu_guardar"> Guardar </string>
     <string name="menu_limpiar"> Limpiar </string>
     <string name="menu_siguiente"> Siguiente </string>
+    <string name="menu_refresh"> Actualizado </string>
 
     <!-- Layout Ver Materias-->
     <string name="grupos_cercanos_titulo"> Materias </string>

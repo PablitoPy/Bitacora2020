@@ -7,6 +7,7 @@ public class Tema {
 private int id;
 private String nombre;
 private String fecha;
+private static Tema temaLogueado;
 private ArrayList<Item> itemscargados;
 private ArrayList<Investigacion> investigacionescargados;
 private ArrayList<Ejercicio> ejercicioscargados;

@@ -101,14 +101,12 @@ public class Materia {
         temascargados.add( cargado );
     }
 
-    public Materia(String nombre, String descripcion, String profesor, Usuario creador, Tema cargado) {
+    public Materia(String nombre, String descripcion, String profesor, Usuario creador ) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.profesor = profesor;
         usuariosIntegrantes = new ArrayList<>();
         usuariosIntegrantes.add( creador );
-        temascargados = new ArrayList<>();
-        temascargados.add( cargado );
     }
 
     public ArrayList<Usuario> getUsuariosIntegrantes() {

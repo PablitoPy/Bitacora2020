@@ -83,8 +83,10 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
             }case R.id.accion_sigte_tar:{
                 Log.d(LogUtils.tag, "Item seleccionado: Siguiente");
                 opcionSiguiente();
+            } case R.id.menu_refresh:{
+                desplegarMensajeActualizadoGrupo();
+                finish();
             }
-
         }
         return true;
     }
@@ -134,6 +136,10 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
 
     public void desplegarMensajeNoExisteGrupo() {
         Toast toast = Toast.makeText( this, "El grupo no existe", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+    public void desplegarMensajeActualizadoGrupo() {
+        Toast toast = Toast.makeText( this, "Actualizado", Toast.LENGTH_SHORT);
         toast.show();
     }
 }

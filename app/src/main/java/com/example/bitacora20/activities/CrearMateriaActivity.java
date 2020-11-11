@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
+import com.example.bitacora20.datos.Tema;
 import com.example.bitacora20.datos.Usuario;
 import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.utils.LogUtils;
@@ -71,7 +72,7 @@ public class CrearMateriaActivity extends AppCompatActivity {
                 setResult(RESULT_OK, intent);
                 finish();
             } else {
-                Materia materia = new Materia( nombre, descripcion , profesor, Usuario.getUsuarioLogueado() );
+                Materia materia = new Materia(nombre, descripcion , profesor, Usuario.getUsuarioLogueado());
                 Materia.agregarMateria( materia );
                 desplegarMensajeResgistroExitoso();
 
