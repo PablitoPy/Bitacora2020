@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="match_parent"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
     	android:layout_height="wrap_content"	    
 	    >
 	    
 	    <TextView 
-	      android:id="@+id/titulo_principal"
+	      android:id="@+id/titulo_principal2"
 	      android:layout_width="match_parent"
 	      android:layout_height="wrap_content"
-	      android:text="@string/grupos_cercanos_titulo"
+	      android:text="@string/titulo_principal2"
 	      android:gravity="center"
 	      android:textSize="29sp"
 	      android:layout_marginBottom="20dp"/>
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/floatingActionButton4"
+		android:clickable="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true"
+		android:layout_marginEnd="29dp"
+		android:layout_marginRight="29dp"
+		android:layout_marginBottom="16dp"
+		android:onClick="lanzarCrearTemas"
+		app:srcCompat="@android:drawable/ic_input_add" />
 	
 	    <!-- Modo 1 -->
 	    <ListView
 	        android:id="@android:id/list"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@id/titulo_principal"/>
+	        android:layout_below="@id/titulo_principal2">
+		</ListView>
 	
 	    <!-- Modo 1 -->
 	    <TextView
@@ -27,6 +43,8 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/lista_vacia" />
+
+
 	    
 	    <!-- Modo 2 -->
 	    <!--ListView
@@ -34,9 +52,5 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@id/titulo_principal"/-->
-	    
-	    
-		    	    
-
 	</RelativeLayout>
 

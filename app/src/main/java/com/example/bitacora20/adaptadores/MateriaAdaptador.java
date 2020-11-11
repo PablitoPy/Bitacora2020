@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -13,7 +14,7 @@ import com.example.bitacora20.R;
 import com.example.bitacora20.datos.Materia;
 
 public class MateriaAdaptador extends BaseAdapter {
-	
+
 	private final Activity actividad;
 	private final ArrayList<Materia> materias;
 	
@@ -21,6 +22,7 @@ public class MateriaAdaptador extends BaseAdapter {
 		super();
 		this.actividad = actividad;
 		this.materias = materias;
+
 	}
 	
 	@Override
@@ -53,9 +55,8 @@ public class MateriaAdaptador extends BaseAdapter {
 	public long getItemId(int arg0) {
 		Materia unMateria = materias.get(arg0);
 		return unMateria.getIdMateria();
-				
+
 	}
 
-	
 
 }

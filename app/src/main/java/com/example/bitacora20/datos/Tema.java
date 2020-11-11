@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Tema {
-private int id;
+    private int id;
 private String nombre;
 private String fecha;
 private static Tema temaLogueado;
 private ArrayList<Item> itemscargados;
 private ArrayList<Investigacion> investigacionescargados;
 private ArrayList<Ejercicio> ejercicioscargados;
-
 
 public static ArrayList<Tema> temas = new ArrayList<>();
 
@@ -37,6 +36,11 @@ public static ArrayList<Tema> temas = new ArrayList<>();
         investigacionescargados.add( creado2 );
         ejercicioscargados = new ArrayList<>();
         ejercicioscargados.add( creado3 );
+    }
+
+    public Tema(String nombre, String fecha) {
+        this.nombre = nombre;
+        this.fecha = fecha;
     }
 
     public static void agregarTema(Tema unTema ) {

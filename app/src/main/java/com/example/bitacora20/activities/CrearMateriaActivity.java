@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
+import com.example.bitacora20.datos.Datos;
 import com.example.bitacora20.datos.Tema;
 import com.example.bitacora20.datos.Usuario;
 import com.example.bitacora20.datos.Materia;
@@ -44,9 +45,9 @@ public class CrearMateriaActivity extends AppCompatActivity {
             idMateria = extras.getInt( "idMateria", -1 );
             if ( idMateria != -1 ) {
                 modoEdicion = true;
-                campoNombre.setText( Materia.materias.get( idMateria ).getNombre() );
-                campoDescripcion.setText( Materia.materias.get( idMateria ).getDescripcion() );
-                campoProfesor.setText( Materia.materias.get( idMateria ).getProfesor() );
+                campoNombre.setText( Datos.materias.get( idMateria ).getNombre() );
+                campoDescripcion.setText( Datos.materias.get( idMateria ).getDescripcion() );
+                campoProfesor.setText( Datos.materias.get( idMateria ).getProfesor() );
                 //boton.setText( "Editar Grupo" );
             }
         }
@@ -62,7 +63,7 @@ public class CrearMateriaActivity extends AppCompatActivity {
             desplegarMensajeCamposRequeridos();
         } else {
             if ( modoEdicion ) {
-                Materia materia = Materia.materias.get( idMateria );
+                Materia materia = Datos.materias.get( idMateria );
                 materia.setNombre( nombre );
                 materia.setDescripcion( descripcion );
                 materia.setProfesor( profesor );
@@ -73,7 +74,7 @@ public class CrearMateriaActivity extends AppCompatActivity {
                 finish();
             } else {
                 Materia materia = new Materia(nombre, descripcion , profesor, Usuario.getUsuarioLogueado());
-                Materia.agregarMateria( materia );
+                Datos.agregarMateria( materia );
                 desplegarMensajeResgistroExitoso();
 
                 Intent intent = new Intent();

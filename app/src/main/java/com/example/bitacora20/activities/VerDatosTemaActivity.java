@@ -24,7 +24,8 @@ public class VerDatosTemaActivity extends AppCompatActivity {
     private int idTema = -1;
     private Tema unTema;
     private TextView nombre;
-    private TextView objetivo;
+    private TextView fecha;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +54,8 @@ public class VerDatosTemaActivity extends AppCompatActivity {
         nombre = (TextView) findViewById(R.id.id_nombre_tema_valor);
         nombre.setText( unTema.getNombre() );
 
-        objetivo = (TextView) findViewById(R.id.id_fecha_tema_valor);
-        objetivo.setText(unTema.getFecha());
+        fecha = (TextView) findViewById(R.id.id_fecha_tema_valor);
+       fecha.setText(unTema.getFecha());
     }
 
     @Override

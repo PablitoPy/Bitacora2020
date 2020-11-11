@@ -8,7 +8,8 @@ import com.example.bitacora20.R;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import static com.example.bitacora20.datos.Materia.materias;
+import static com.example.bitacora20.datos.Datos.materias;
+
 
 public class VerMateriaActivity extends AppCompatActivity {
 

@@ -12,8 +12,9 @@ import com.example.bitacora20.R;
 
 import java.util.ArrayList;
 
+import static com.example.bitacora20.datos.Datos.materias;
 import static com.example.bitacora20.datos.Tema.temas;
-import static com.example.bitacora20.datos.Materia.materias;
+
 
 public class TemaAdaptador extends BaseAdapter {
 
@@ -35,7 +36,7 @@ public class TemaAdaptador extends BaseAdapter {
 		nombreElemento.setText(temas.get(posicion).getNombre());
 		
 		TextView cantIntegrantes = (TextView) view.findViewById(R.id.cant_integrantes);
-		cantIntegrantes.setText(""+materias.get(posicion).cantidadIntegrantes());
+		cantIntegrantes.setText(""+ materias.get(posicion).cantidadIntegrantes());
 		return view;	
 	}
 	

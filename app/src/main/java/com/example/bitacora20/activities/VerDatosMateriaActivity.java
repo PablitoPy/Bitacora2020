@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
+import com.example.bitacora20.datos.Datos;
 import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.utils.LogUtils;
 import com.example.bitacora20.utils.NotificationsUtils;
@@ -44,13 +45,13 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
     }
 
     public void actualizarVista(){
-        if ( idMateria < 0 || idMateria > (Materia.materias.size()-1) ) {
+        if ( idMateria < 0 || idMateria > (Datos.materias.size()-1) ) {
             desplegarMensajeNoExisteGrupo();
             finish();
             return;
         }
 
-        unaMateria = Materia.materias.get( idMateria );
+        unaMateria = Datos.materias.get( idMateria );
 
         nombre = (TextView) findViewById(R.id.id_nombre_materia_valor);
         nombre.setText( unaMateria.getNombre() );
@@ -76,7 +77,7 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
                 break;
             }
             case R.id.eliminar_materia:{
-                Materia.materias.remove( idMateria );
+                Datos.materias.remove( idMateria );
                 desplegarMensajeEliminacionGrupo();
                 finish();
                 break;
@@ -93,8 +94,8 @@ public class VerDatosMateriaActivity extends AppCompatActivity {
 
     public void opcionSiguiente(){
         idMateria++;
-        if(idMateria < Materia.materias.size()){
-            unaMateria = Materia.materias.get(idMateria);
+        if(idMateria < Datos.materias.size()){
+            unaMateria = Datos.materias.get(idMateria);
             actualizarVista();
         }else{
             Context contexto = getApplicationContext();

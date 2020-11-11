@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.bitacora20.R;
 import com.example.bitacora20.adaptadores.MateriaAdaptador;
+import com.example.bitacora20.datos.Datos;
 import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.utils.LogUtils;
 import java.util.ArrayList;
@@ -29,11 +30,12 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_materias);
 
-		ArrayList<Materia> materias = Materia.materias;
+		ArrayList<Materia> materias = Datos.materias;
 		Log.d(LogUtils.tag, "CantidadMaterias: " + materias.size());
 
 		// Modo1
 		setListAdapter(new MateriaAdaptador(this, materias));
+
 
 		// Modo 2
 		/*
@@ -58,8 +60,8 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Toast.makeText(this, "Click en fila " + position + ". Id: " + id, Toast.LENGTH_SHORT).show();
 
-		Intent i = new Intent(this, VerDatosMateriaActivity.class);
-		i.putExtra("idGrupo", Integer.parseInt("" + id));
+		Intent i = new Intent(this, TemasListView.class);
+		i.putExtra("idMateria", Integer.parseInt("" + id));
 		startActivity(i);
 	}
 
@@ -68,6 +70,19 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 		startActivityForResult(intentCreacionMateria, RequestCode.ACT_LANZADA_CREAR_GRUPO.getCodigo());
 
 	}
+
+//		 floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+//		@Override
+//		public void Onclick(View v){
+//			int Posicion = 0;
+//			insertarLista(position);
+//
+//		}
+//	});
+//
+//	public void insertarLista (int position){
+//		elementos.add(position, new ElementosLista (R.drawable.ic_android, ))
+//	}
 
 	public void lanzarVerDatosGrupos(View view) {
 		final EditText entrada = new EditText(this);

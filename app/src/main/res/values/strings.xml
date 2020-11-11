@@ -57,6 +57,7 @@
     <string name="etiqueta_nombre_materia"> Nombre:  </string>
     <string name="etiqueta_descripcion_materia"> Descripción:  </string>
     <string name="etiqueta_profesor_materia"> Profesor:  </string>
+    <string name="titulo_principal2"> Temas </string>
 
     <!-- Layout Ver Datos Tema -->
     <string name="ver_datos_tema_titulo"> Datos de las Temas </string>
