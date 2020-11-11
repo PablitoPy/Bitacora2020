@@ -7,25 +7,35 @@ public class Tema {
 private int id;
 private String nombre;
 private String fecha;
+private ArrayList<Item> itemscargados;
+private ArrayList<Investigacion> investigacionescargados;
+private ArrayList<Ejercicio> ejercicioscargados;
 
-
-public static Tema tema1;
-public static Tema tema2;
-public static Tema tema3;
 
 public static ArrayList<Tema> temas = new ArrayList<>();
 
-
-
-    public Tema(int id, String nombre, String fecha){
+    public Tema(int id, String nombre, String fecha, Item creado1, Investigacion creado2, Ejercicio creado3 ){
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
+        itemscargados = new ArrayList<>();
+        itemscargados.add( creado1 );
+        investigacionescargados = new ArrayList<>();
+        investigacionescargados.add( creado2 );
+        ejercicioscargados = new ArrayList<>();
+        ejercicioscargados.add( creado3 );
     }
 
-    public Tema(String nombre, String fecha){
+
+    public Tema(String nombre, String fecha, Item creado1, Investigacion creado2, Ejercicio creado3 ){
         this.nombre = nombre;
         this.fecha = fecha;
+        itemscargados = new ArrayList<>();
+        itemscargados.add( creado1 );
+        investigacionescargados = new ArrayList<>();
+        investigacionescargados.add( creado2 );
+        ejercicioscargados = new ArrayList<>();
+        ejercicioscargados.add( creado3 );
     }
 
     public static void agregarTema(Tema unTema ) {
@@ -62,5 +72,29 @@ public static ArrayList<Tema> temas = new ArrayList<>();
 
     public static void setTemas(ArrayList<Tema> temas) {
         Tema.temas = temas;
+    }
+
+    public ArrayList<Item> getItemscargados() {
+        return itemscargados;
+    }
+
+    public void setItemscargados(ArrayList<Item> itemscargados) {
+        this.itemscargados = itemscargados;
+    }
+
+    public ArrayList<Investigacion> getInvestigacionescargados() {
+        return investigacionescargados;
+    }
+
+    public void setInvestigacionescargados(ArrayList<Investigacion> investigacionescargados) {
+        this.investigacionescargados = investigacionescargados;
+    }
+
+    public ArrayList<Ejercicio> getEjercicioscargados() {
+        return ejercicioscargados;
+    }
+
+    public void setEjercicioscargados(ArrayList<Ejercicio> ejercicioscargados) {
+        this.ejercicioscargados = ejercicioscargados;
     }
 }
