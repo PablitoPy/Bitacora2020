@@ -40,9 +40,6 @@
         <activity android:name=".activities.CrearTemaActivity" >
         </activity>
 
-        <activity android:name=".activities.TemasListView" >
-        </activity>
-
         <activity android:name=".activities.VerDatosTemaActivity" >
         </activity>
 

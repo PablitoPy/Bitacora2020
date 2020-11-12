@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
+import com.example.bitacora20.datos.Datos;
+import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.datos.Usuario;
 import com.example.bitacora20.datos.Tema;
 import com.example.bitacora20.utils.LogUtils;
@@ -22,8 +24,11 @@ public class CrearTemaActivity extends AppCompatActivity {
     private EditText campoFecha;
     private Button boton;
 
-    private int idGrupo = -1;
+    private int idTema = -1;
     private boolean modoEdicion = false;
+    Materia unaMateria = null;
+    Tema unTema = null;
+    public int idMateria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +42,13 @@ public class CrearTemaActivity extends AppCompatActivity {
         // Verificamos si nos llamaron para editar algun grupo
         Bundle extras = getIntent().getExtras();
         if ( extras != null ) {
-            idGrupo = extras.getInt( "idGrupo", -1 );
-            if ( idGrupo != -1 ) {
+            idMateria = extras.getInt( "idMateria", -1 );
+            Log.i(LogUtils.tag, "Id recibido de la Materia: " + idMateria);
+            if ( idMateria != -1 ) {
+                Materia unaMateria = Datos.buscarMateria(idMateria);
                 modoEdicion = true;
-                campoNombre.setText( Tema.temas.get( idGrupo ).getNombre() );
-                campoFecha.setText( Tema.temas.get( idGrupo ).getFecha() );
+                campoNombre.setText( unaMateria.getTemas().get( idTema ).getNombre() );
+                campoFecha.setText( unaMateria.getTemas().get( idTema ).getFecha() );
                 //boton.setText( "Editar Grupo" );
             }
         }
@@ -56,17 +63,22 @@ public class CrearTemaActivity extends AppCompatActivity {
             desplegarMensajeCamposRequeridos();
         } else {
             if ( modoEdicion ) {
-                Tema tema = Tema.temas.get( idGrupo );
-                tema.setNombre( nombre );
-                tema.setFecha( fecha );
+                unaMateria = Datos.buscarMateria(idMateria);
+                unTema = unaMateria.getTemas().get(idTema);
+
+                unTema.setNombre( nombre );
+                unTema.setFecha( fecha );
 
                 Intent intent = new Intent();
                 intent.putExtra("resultado", 1);
                 setResult(RESULT_OK, intent);
                 finish();
             } else {
+                unaMateria = Datos.buscarMateria(idMateria);
+                unTema = unaMateria.getTemas().get(idTema);
+                
                 Tema tema = new Tema( nombre, fecha );
-                Tema.agregarTema( tema );
+                Datos.agregarTema( tema, unaMateria );
                 desplegarMensajeResgistroExitoso();
 
                 Intent intent = new Intent();

@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bitacora20.R;
+import com.example.bitacora20.datos.Datos;
+import com.example.bitacora20.datos.Materia;
 import com.example.bitacora20.datos.Tema;
 import com.example.bitacora20.utils.LogUtils;
 import com.example.bitacora20.utils.NotificationsUtils;
@@ -27,6 +29,10 @@ public class VerDatosTemaActivity extends AppCompatActivity {
     private TextView fecha;
 
 
+    Materia unaMateria = null;
+    int idMateria = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,21 +41,24 @@ public class VerDatosTemaActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            idTema = extras.getInt("idGrupo", -1);
-            Log.i(LogUtils.tag, "Id recibido del grupo: "+idTema);
+            idTema = extras.getInt("idTema", -1);
+            Log.i(LogUtils.tag, "Id recibido del tema: "+idTema);
         }
 
         actualizarVista();
+
     }
 
     public void actualizarVista(){
-        if ( idTema < 0 || idTema > (Tema.temas.size()-1) ) {
+        unaMateria = Datos.buscarMateria(idMateria);
+
+        if ( idTema < 0 || idTema > (unaMateria.getTemas().size()-1) ) {
             desplegarMensajeNoExisteGrupo();
             finish();
             return;
         }
 
-        unTema = Tema.temas.get( idTema );
+        unTema = unaMateria.getTemas().get( idTema );
 
         nombre = (TextView) findViewById(R.id.id_nombre_tema_valor);
         nombre.setText( unTema.getNombre() );
@@ -66,13 +75,14 @@ public class VerDatosTemaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        unaMateria = Datos.buscarMateria(idMateria);
         switch( item.getItemId() ) {
             case R.id.editar_tema:{
                 lanzarActividadEdicionGrupo();
                 break;
             }
             case R.id.eliminar_tema:{
-                Tema.temas.remove( idTema );
+                unaMateria.getTemas().remove( idTema );
                 desplegarMensajeEliminacionGrupo();
                 finish();
                 break;
@@ -86,9 +96,10 @@ public class VerDatosTemaActivity extends AppCompatActivity {
     }
 
     public void opcionSiguiente(){
+        unaMateria = Datos.buscarMateria(idMateria);
         idTema++;
-        if(idTema < Tema.temas.size()){
-            unTema = Tema.temas.get(idTema);
+        if(idTema < unaMateria.getTemas().size()){
+            unTema = unaMateria.getTemas().get(idTema);
             actualizarVista();
         }else{
             Context contexto = getApplicationContext();
