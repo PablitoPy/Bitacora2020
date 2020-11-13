@@ -12,6 +12,7 @@ private ArrayList<Item> itemscargados;
 private ArrayList<Investigacion> investigacionescargados;
 private ArrayList<Ejercicio> ejercicioscargados;
 
+public static ArrayList<Tema> temas = new ArrayList<>();
 
     public Tema(int id, String nombre, String fecha, Item creado1, Investigacion creado2, Ejercicio creado3 ){
         this.id = id;
@@ -42,7 +43,9 @@ private ArrayList<Ejercicio> ejercicioscargados;
         this.fecha = fecha;
     }
 
-
+    public static void agregarTema(Tema unTema ) {
+        temas.add( unTema );
+    }
 
     public int getId() {
         return id;
@@ -68,7 +71,13 @@ private ArrayList<Ejercicio> ejercicioscargados;
         this.fecha = fecha;
     }
 
+    public static ArrayList<Tema> getTemas() {
+        return temas;
+    }
 
+    public static void setTemas(ArrayList<Tema> temas) {
+        Tema.temas = temas;
+    }
 
     public ArrayList<Item> getItemscargados() {
         return itemscargados;

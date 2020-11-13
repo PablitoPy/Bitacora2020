@@ -28,7 +28,6 @@ public class Usuario {
     }
 
 
-
     public static void agregarUsuario(Usuario usuario) {
         usuarios.add( usuario );
     }

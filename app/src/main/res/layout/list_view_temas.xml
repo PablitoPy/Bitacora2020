@@ -44,8 +44,6 @@
 	        android:layout_height="wrap_content"
 	        android:text="@string/lista_vacia" />
 
-
-	    
 	    <!-- Modo 2 -->
 	    <!--ListView
 	        android:id="@+id/listTaxista"

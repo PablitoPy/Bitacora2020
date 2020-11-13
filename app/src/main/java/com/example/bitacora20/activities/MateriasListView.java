@@ -68,6 +68,7 @@ public class MateriasListView extends ListActivity {// Modo 1, usa @android:id/l
 	public void lanzarCrearMateria(View view) {
 		Intent intentCreacionMateria = new Intent(this, CrearMateriaActivity.class);
 		startActivityForResult(intentCreacionMateria, RequestCode.ACT_LANZADA_CREAR_GRUPO.getCodigo());
+
 	}
 
 //		 floatingActionButton3.setOnClickListener(new View.OnClickListener() {

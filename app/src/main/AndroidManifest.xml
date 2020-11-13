@@ -9,16 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bitacora20">
-        <activity android:name=".MainActivity"/>
 
-<activity android:name=".activities.InicioActivity">
-    <intent-filter>
+
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+            </intent-filter>
 
-
-</activity>
+        </activity>
         <activity android:name=".activities.LoginActivity" >
         </activity>
 
@@ -40,9 +39,11 @@
         <activity android:name=".activities.CrearTemaActivity" >
         </activity>
 
-        <activity android:name=".activities.VerDatosTemaActivity" >
+        <activity android:name=".activities.TemasListView" >
         </activity>
 
-    </application>
+        <activity android:name=".activities.VerDatosTemaActivity" >
+        </activity>
+        </application>
 
 </manifest>

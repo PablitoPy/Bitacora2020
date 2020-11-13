@@ -1,15 +1,21 @@
 package com.example.bitacora20.datos;
 
-import java.util.ArrayList;
+import com.example.bitacora20.activities.TemasListView;
 
+import java.util.ArrayList;
+import java.util.Date;
+
+import static com.example.bitacora20.datos.Investigacion.investigaciones;
+import static com.example.bitacora20.datos.Ejercicio.ejercicios;
+import static com.example.bitacora20.datos.Item.items;
+import static com.example.bitacora20.datos.Tema.temas;
 
 public class Materia {
     private int idMateria;
     private String nombre;
     private String descripcion;
     private String profesor;
-
-    private ArrayList<Tema> temas;
+    private ArrayList<Tema> temascargados;
     private ArrayList<Usuario> usuariosIntegrantes;
 
 
@@ -20,7 +26,7 @@ public class Materia {
         this.profesor = profesor;
         usuariosIntegrantes = new ArrayList<>();
         usuariosIntegrantes.add( creador );
-        this.temas = temas;
+        this.temascargados = temas;
     }
 
     public Materia(String nombre, String descripcion, String profesor, Usuario creador ) {
@@ -81,12 +87,12 @@ public class Materia {
         return cantidad;
     }
 
-    public ArrayList<Tema> getTemas() {
-        return temas;
+    public ArrayList<Tema> getTemascargados() {
+        return temascargados;
     }
 
-    public void setTemas(ArrayList<Tema> temascargados) {
-        this.temas = temascargados;
+    public void setTemascargados(ArrayList<Tema> temascargados) {
+        this.temascargados = temascargados;
     }
 
 }

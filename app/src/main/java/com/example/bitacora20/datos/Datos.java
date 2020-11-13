@@ -4,7 +4,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-
+import static com.example.bitacora20.datos.Ejercicio.ejercicios;
+import static com.example.bitacora20.datos.Item.items;
+import static com.example.bitacora20.datos.Tema.temas;
 import com.example.bitacora20.utils.LogUtils;
 
 public class Datos {
@@ -56,26 +58,26 @@ public class Datos {
         ejercicio1 = new Ejercicio("satisfactoria experiencia", 89, "ninguna duda", 16);
         ejercicio2 = new Ejercicio("insatisfactoria experiencia", 89, "ninguna duda", 16);
         ejercicio3 = new Ejercicio("n/a", 89, "ninguna duda", 16);
-        ejercicios1.add(ejercicio1);
-        ejercicios1.add(ejercicio2);
-        ejercicios1.add(ejercicio3);
+        ejercicios.add(ejercicio1);
+        ejercicios.add(ejercicio2);
+        ejercicios.add(ejercicio3);
 
         item1 = new Item("Guerra Fría", "Conflicto no violento entre los EEUU y la USSR", "ninguna duda", true);
         item2 = new Item("Triple Alianza", "Conflicto armado entre Paraguay y la Alianza de Brasil, Argentina, Uruguay", "ninguna duda", true);
         item3 = new Item("Carrera Espacial", "una carrera en el espacio :p", "ninguna duda", false);
-        items1.add(item1);
-        items1.add(item2);
-        items1.add(item3);
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
 
 
         tema1 = new Tema(1, "Logaritmica", "2012/01/11", item1, investigacion1,ejercicio1);
         tema2 = new Tema(2, "Trigonometria", "zwÖlf Mai",item2, investigacion2,ejercicio2);
         tema3 = new Tema(3, "Geometria", "12 Feb", item3, investigacion3,ejercicio3);
-        tema4 = new Tema(4, "test", "20 Feb", item3, investigacion3,ejercicio3);
+        tema4 = new Tema(4, "Android Studio", "20 Feb", item3, investigacion3,ejercicio3);
         temas1.add(tema1);
         temas2.add(tema2);
         temas3.add(tema3);
-
+        temas.add(tema4);
 
         Usuario unUsuario = new Usuario("pepe", "Carlos", "correo@mail.com", "123", "000000");
         materia1 = new Materia(1, "Matematica", "Matematica I y II", "Hans", unUsuario, temas1);
@@ -91,26 +93,15 @@ public class Datos {
             unaMateria = materias.get(i);
             if (idMateria == unaMateria.getIdMateria()) {
                 i = materias.size();
-                Log.i(LogUtils.tag, "Bitacora encontrada: "+unaMateria.getNombre());
+                Log.i(LogUtils.tag, "Bitacora encontrada: "+unaMateria.getIdMateria());
                 return unaMateria;
             }
-
         }
         Log.i(LogUtils.tag, "Bitacora NULL");
 
         return null;
     }
 
-
-
-    public static void agregarMateria(Materia unaMateria ) {
-        materias.add( unaMateria );
+    public static void agregarMateria(Materia unaMateria ) { materias.add( unaMateria );
     }
-
-    public static void agregarTema(Tema unTema, Materia unaMateria  ) {
-        unaMateria.getTemas().add( unTema );
-    }
-
-
-
 }

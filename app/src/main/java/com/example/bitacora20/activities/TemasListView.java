@@ -18,45 +18,47 @@ import com.example.bitacora20.utils.RequestCode;
 
 import java.util.ArrayList;
 
-
 public class TemasListView extends ListActivity {// Modo 1, usa @android:id/list
 //public class VerTarjetasActivity extends Activity{ // Modo2, usa id definido por el usuario
 
-	Materia unaMateria = null;
-
 	int idMateria = 0;
-	int idTema = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		unaMateria = Datos.buscarMateria(idMateria);
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_temas);
 		Bundle extras = getIntent().getExtras();
-
-
-		ArrayList<Tema> temas = unaMateria.getTemas();
-		Log.d(LogUtils.tag, "CantidadGrupos: "+temas.size());
-
+		if(extras != null){
+			idMateria = extras.getInt("idMateria", -1);
+			Log.i(LogUtils.tag, "Id recibido del grupo: "+idMateria);
+		}
+		Materia unaMateria = Datos.buscarMateria(idMateria);
+//		ArrayList<Tema> temas = Tema.temas;
+		Log.d(LogUtils.tag, "CantidadTemas: "+unaMateria.getTemascargados().size());
+		
 		// Modo1
-		setListAdapter(new TemaAdaptador(this, temas));
-
+		setListAdapter(new TemaAdaptador(this, unaMateria.getTemascargados()));
 		// Modo 2
 		/*
 		ListView listTaxista = (ListView) findViewById(R.id.listTaxista);
-		listTaxista.setAdapter(new TaxistaAdaptador(this, taxistas));
+		listTaxista.setAdapter(new TaxistaAdaptador(this, taxistas));		
 		listTaxista.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                     long id) {
                              .
-
+                
                 Toast.makeText(getBaseContext(), "Posicion seleccionada: "+position, Toast.LENGTH_LONG).show();
-
+                
             }
         });*/
+		
+	}
+	public void lanzarCrearTemas(View view) {
+		Intent intentCreacionTema = new Intent(this, CrearTemaActivity.class);
+		startActivityForResult(intentCreacionTema, RequestCode.ACT_LANZADA_CREAR_GRUPO.getCodigo());
 
 	}
-
 	
 	//Modo 1
 	@Override
@@ -69,5 +71,5 @@ public class TemasListView extends ListActivity {// Modo 1, usa @android:id/list
 	}
 
 
-}
 
+}
