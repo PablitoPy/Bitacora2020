@@ -15,7 +15,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
     public void lanzarLogin (View view ){
         Intent i = new Intent(this,LoginActivity.class);
         startActivity(i);

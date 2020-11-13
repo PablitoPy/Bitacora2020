@@ -15,14 +15,5 @@ public class InicioActivity extends Activity {
         setContentView(R.layout.activity_inicio);
     }
 
-    public void lanzarLogin (View view ){
-        Intent i = new Intent(this,LoginActivity.class);
-        startActivity(i);
-    }
-
-    public void lanzarRegistrarse (View view ){
-        Intent i = new Intent(this,CrearCuentaActivity.class);
-        startActivity(i);
-    }
 }
 
