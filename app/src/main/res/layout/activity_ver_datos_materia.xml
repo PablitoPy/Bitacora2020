@@ -52,11 +52,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="30dp">
 
-            <ImageView
-                android:id="@+id/tipo_tarjeta_imagen"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_archive"  />
+
             <TextView
                 android:id="@+id/id_nombre_materia_etiqueta"
                 android:layout_width="wrap_content"
@@ -92,11 +88,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="30dp">
 
-            <ImageView
-                android:id="@+id/nombre_ape_contacto_imagen"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_attachment" />
+
             <TextView
                 android:id="@+id/id_descripcion_materia_etiqueta"
                 android:layout_width="wrap_content"
@@ -130,11 +122,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="30dp">
 
-            <ImageView
-                android:id="@+id/nombre_ape2_contacto_imagen"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_cc_am" />
+
             <!-- ic_menu_compass-->
             <TextView
                 android:id="@+id/id_profesor_materia_etiqueta"
