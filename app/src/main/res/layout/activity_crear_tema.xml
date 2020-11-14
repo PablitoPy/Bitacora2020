@@ -4,7 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/book_background"
+        android:scaleType="centerCrop"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#D7615F5F"
+        android:gravity="center"
+        android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,8 +26,8 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="10dp"
         android:textSize="@dimen/tamanho_titulo"
-        android:textStyle="bold"
-        />
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,8 +38,8 @@
         android:layout_below="@+id/tit_creacion_grupo"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:textSize="@dimen/desc_actividad"
-        />
+        android:textColor="@color/white"
+        android:textSize="@dimen/desc_actividad" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -36,6 +48,13 @@
         android:ems="15"
         android:id="@+id/creacion_nombre_tema"
         android:layout_marginTop="40dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="#FFFDFD"
+        android:background="@drawable/input"
         android:layout_below="@+id/desc_actiividad_creacion_grupo"
         android:layout_centerHorizontal="true"
         />
@@ -46,7 +65,14 @@
         android:inputType="textMultiLine"
         android:ems="15"
         android:hint="@string/crear_tema_hint_fecha"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
         android:id="@+id/creacion_fecha_tema"
+        android:textColor="@color/white"
+        android:textColorHint="#FFFDFD"
+        android:background="@drawable/input"
         android:layout_below="@id/creacion_nombre_tema"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true" />
@@ -61,5 +87,5 @@
         android:layout_marginTop="40dp"
         android:onClick="crearGrupo"/>-->
 
-
+    </LinearLayout>
 </RelativeLayout>

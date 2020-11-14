@@ -4,67 +4,101 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/book_background"
+        android:scaleType="centerCrop"/>
 
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/crear_materia_titulo"
-        android:id="@+id/tit_creacion_materia"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"
-        android:textSize="@dimen/tamanho_titulo"
-        android:textStyle="bold"
-        />
+        android:background="#D7615F5F"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/crear_materia_descripcion"
-        android:id="@+id/desc_actividad_creacion_materia"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tit_creacion_grupo"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textSize="@dimen/desc_actividad"
-        />
+        <TextView
+            android:id="@+id/tit_creacion_materia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="10dp"
+            android:text="@string/crear_materia_titulo"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tamanho_titulo"
+            android:textStyle="bold" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/crear_materia_hint_nombre"
-        android:ems="15"
-        android:id="@+id/creacion_nombre_materia"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/desc_actiividad_creacion_grupo"
-        android:layout_centerHorizontal="true"
-        />
+        <TextView
+            android:id="@+id/desc_actividad_creacion_materia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tit_creacion_grupo"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="@string/crear_materia_descripcion"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFDFD"
+            android:textSize="@dimen/desc_actividad" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="15"
-        android:hint="@string/crear_materia_hint_descripcion"
-        android:id="@+id/creacion_descripcion_materia"
-        android:layout_below="@id/creacion_nombre_materia"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:id="@+id/creacion_nombre_materia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc_actiividad_creacion_grupo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/input"
+            android:ems="15"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:hint="@string/crear_materia_hint_nombre"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFDFD" />
 
-    <EditText
-        android:id="@+id/creacion_profesor_materia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/creacion_descripcion_materia"
-        android:layout_marginTop="15dp"
-        android:ems="15"
-        android:hint="@string/crear_materia_hint_profesor"
-        android:inputType="textMultiLine"
-        android:layout_centerHorizontal="true" />
- <!--   <Button
+        <EditText
+            android:id="@+id/creacion_descripcion_materia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/creacion_nombre_materia"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/input"
+            android:ems="15"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:hint="@string/crear_materia_hint_descripcion"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFDFD" />
+
+        <EditText
+            android:id="@+id/creacion_profesor_materia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/creacion_descripcion_materia"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/input"
+            android:ems="15"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:hint="@string/crear_materia_hint_profesor"
+            android:inputType="textMultiLine"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFDFD" />
+        <!--   <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/crear_materia_boton_crearmateria"
@@ -74,5 +108,5 @@
         android:layout_marginTop="40dp"
         android:onClick="crearMateria"/>-->
 
-
+    </LinearLayout>
 </RelativeLayout>

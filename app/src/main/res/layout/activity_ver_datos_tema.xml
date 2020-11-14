@@ -57,7 +57,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:textSize="20sp"
-                 />
+                />
         </LinearLayout>
 
         <LinearLayout
