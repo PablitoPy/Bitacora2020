@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/book_background" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#D7615F5F"
+        android:gravity="center">
+
 
         <TextView
+            android:id="@+id/tit_creacion_grupo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ver_datos_tema_titulo"
-            android:id="@+id/tit_creacion_grupo"
-            android:layout_alignParentTop="true"
             android:layout_gravity="center"
-            android:paddingTop="10dp"
+            android:paddingTop="400dp"
+            android:text="@string/ver_datos_tema_titulo"
+            android:textColor="@color/white"
             android:textSize="@dimen/tamanho_titulo"
-            android:textStyle="bold"
+            android:textStyle="italic"
+
             />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="@string/ver_datos_tema_descripcion"
             android:id="@+id/desc_actiividad_creacion_tema"
             android:layout_marginTop="20dp"
@@ -30,64 +43,112 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textSize="@dimen/desc_actividad"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+
             />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:gravity="left"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:id="@+id/tipo_tarjeta_imagen"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@android:drawable/star_big_on" />
+                android:src="@android:drawable/ic_menu_gallery"  />
             <TextView
                 android:id="@+id/id_nombre_tema_etiqueta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:textSize="20sp"
-                android:text="@string/etiqueta_nombre_tema" />
+                android:layout_gravity="center"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:text="@string/etiqueta_nombre_tema"
+                android:textColor="@color/white"
+
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/id_nombre_tema_valor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:textSize="20sp"
-                />
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/white"
+
+                android:textSize="20sp" />
+
+            />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+
+            android:gravity="left"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="30dp">
 
             <ImageView
-                android:id="@+id/nombre_ape_contacto_imagen"
+                android:id="@+id/tipo_tarjeta_imagen2"
                 android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_compass" />
+                android:layout_height="45dp"
+                android:src="@android:drawable/ic_menu_my_calendar"  />
+
             <TextView
                 android:id="@+id/id_fecha_tema_etiqueta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:textSize="20sp"
-                android:text="@string/etiqueta_fecha_tema" />
+
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:below="@+id/id_nombre_tema_etiqueta"
+                android:text="@string/etiqueta_fecha_tema"
+                android:textColor="@color/white"
+                android:textColorHint="#FFFDFD"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/id_fecha_tema_valor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_gravity="top"
                 android:layout_marginLeft="10dp"
-                android:textSize="20sp"
-                />
+                android:background="@drawable/input"
+
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="#FFFDFD"
+                android:textSize="20sp" />
+            />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="553dp"
+            ></LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+
+
+</RelativeLayout>

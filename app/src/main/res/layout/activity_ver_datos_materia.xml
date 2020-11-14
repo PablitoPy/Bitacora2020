@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/book_background" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#D7615F5F"
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -15,9 +25,9 @@
             android:id="@+id/tit_creacion_grupo"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
-            android:paddingTop="10dp"
+            android:paddingTop="400dp"
             android:textSize="@dimen/tamanho_titulo"
-            android:textColor="#3B75A3"
+            android:textColor="@color/white"
             android:textStyle="italic"
             />
 
@@ -31,12 +41,14 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textSize="@dimen/desc_actividad"
+            android:textColor="@color/white"
+            android:textStyle="italic"
             />
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_marginTop="30dp">
 
@@ -44,14 +56,20 @@
                 android:id="@+id/tipo_tarjeta_imagen"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@android:drawable/star_big_on" />
+                android:src="@android:drawable/ic_menu_archive"  />
             <TextView
                 android:id="@+id/id_nombre_materia_etiqueta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:textSize="20sp"
-                android:text="@string/etiqueta_nombre_materia" />
+                android:text="@string/etiqueta_nombre_materia"
+                android:textColor="@color/white"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"/>
             <TextView
                 android:id="@+id/id_nombre_materia_valor"
                 android:layout_width="wrap_content"
@@ -59,27 +77,39 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:textSize="20sp"
-                 />
+                android:textColor="@color/white"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="30dp">
 
             <ImageView
                 android:id="@+id/nombre_ape_contacto_imagen"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_compass" />
+                android:src="@android:drawable/ic_menu_attachment" />
             <TextView
                 android:id="@+id/id_descripcion_materia_etiqueta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:textSize="20sp"
-                android:text="@string/etiqueta_descripcion_materia" />
+                android:text="@string/etiqueta_descripcion_materia"
+                android:textColor="@color/white"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"/>
             <TextView
                 android:id="@+id/id_descripcion_materia_valor"
                 android:layout_width="wrap_content"
@@ -87,14 +117,38 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/nombre_ape2_contacto_imagen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_cc_am" />
+            <!-- ic_menu_compass-->
             <TextView
                 android:id="@+id/id_profesor_materia_etiqueta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:textSize="20sp"
-                android:text="@string/etiqueta_profesor_materia" />
+                android:text="@string/etiqueta_profesor_materia"
+                android:textColor="@color/white"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"/>
             <TextView
                 android:id="@+id/id_profesor_materia_valor"
                 android:layout_width="wrap_content"
@@ -102,7 +156,18 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
                 />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="493dp"
+            ></LinearLayout>
     </LinearLayout>
-</ScrollView>
+
+</RelativeLayout>
